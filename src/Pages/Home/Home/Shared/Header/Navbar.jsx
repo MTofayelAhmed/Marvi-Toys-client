@@ -43,10 +43,10 @@ const Navbar = () => {
           <img src={logo} alt="" />
         </button>
 
-        <button className=" text-5xl font-bold font-mono  ">MARVITOYS</button>
+        <button className=" text-5xl font-bold font-mono ml-20  ">MARVITOYS</button>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-2">
+      <div className="navbar-center hidden lg:flex ml-40 pl-20">
+        <ul className="menu menu-horizontal px-2 ">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -61,7 +61,20 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        
+        {/* for Dynamic part */}
+      <ul className="menu menu-horizontal px-2 ">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          <li tabIndex={0}>
+            <Link> All Toys</Link>
+          </li>
+
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
