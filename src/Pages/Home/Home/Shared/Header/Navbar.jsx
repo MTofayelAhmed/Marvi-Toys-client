@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
 
        
-        <button className="btn bg-red-800 mr-20 ">
+        <button className="btn bg-red-900 mr-20 ">
           <img src={logo} alt="" />
         </button>
 
