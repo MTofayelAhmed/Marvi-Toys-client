@@ -1,12 +1,12 @@
-import logo from '../../../../../assets/logo.png'
+import logo from '../../../../../assets/logo-company.png'
 
 const Footer = () => {
   return (
-    <footer className="footer p-10  bg-gray-800  text-neutral-content rounded-lg mt-16">
+    <footer className="footer p-10  bg-gray-800  text-neutral-content  mt-16">
     <div>
-    <button className="btn  ">
-          <img src={logo} alt="" />
-        </button>
+  
+          <img className="w-15 rounded-full" src={logo} alt="" />
+      
       <p>MAVITOYS LTD<br/>Pioneer in Toys since 1992</p>
     </div> 
     <div>

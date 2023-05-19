@@ -17,7 +17,7 @@ const AddToy = () => {
     photo, name, sellerName, sellerEmail, category, price, rating, quantity, description
   }
   console.log(toyInfo)
-fetch('http://localhost:5000/toys',{
+fetch('https://assignment-11-server-two-puce.vercel.app/toys',{
   method: 'POST', 
   headers: {
     "content-type": "application/json"

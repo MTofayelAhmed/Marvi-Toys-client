@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
-import logo from "../../../../../assets/logo.png";
+import logo from "../../../../../assets/logo-company.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../../../Provider/AuthProvider";
+import profile from "../../../../../assets/profilePic.png";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+console.log("user", user)
 
 
-
-  const handleLogOut = ()=>{
+  const handleLogOut = () => {
     logOut()
-    .then(result=>{
-      const signOut = result.user;
-      console.log("signOut",signOut)
-
-    })
-    .catch(error=>{
-      console.log(error.message)
-    })
-  }
+      .then((result) => {
+        const signOut = result.user;
+        console.log("signOut", signOut);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
-    <div className="navbar text-white bg-red-800 h-[100px] rounded-xl font-bold mb-16 ">
+    <div className="navbar font-bold mb-16 bg-gray-800 text-white ">
       <div className="navbar-start">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,9 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <button className="btn bg-red-900 mr-10 ">
-          <img src={logo} alt="" />
-        </button>
+        <img className="w-15 rounded-full" src={logo} alt="" />
 
         <button className=" text-5xl font-bold font-mono ml-20  ">
           MARVITOYS
@@ -70,7 +68,7 @@ const Navbar = () => {
           </li>
 
           <li tabIndex={0}>
-            <Link to='/allToys'> All Toys</Link>
+            <Link to="/allToys"> All Toys</Link>
           </li>
 
           <li>
@@ -78,37 +76,40 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    <div className="navbar-end">
-
+      <div className="navbar-end">
         {/* for Dynamic part */}
-      { user? <ul className="menu menu-horizontal px-2 ">
-         
+        {user ? (
+          <ul className="menu menu-horizontal px-2 ">
             <li>
-            <Link to="/myToys">My Toys</Link>
-          </li>
+              <Link to="/myToys">My Toys</Link>
+            </li>
 
-          <li tabIndex={0}>
-            <Link to="addToy">Add a Toy</Link>
-          </li>
+            <li tabIndex={0}>
+              <Link to="addToy">Add a Toy</Link>
+            </li>
 
-          <li>
-            <div className="avatar">
-              <div className="w-15 rounded-full">
-                <img src={logo} />
+            <li>
+              <div className="tooltip" data-tip={user?.displayName}>
+                <div className="avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={profile} />
+                  </div>
+                </div>
               </div>
-            </div>
-          </li>
-          
-          <li onClick={ handleLogOut}>
-            <Link>LogOut</Link>
-          </li>
+            </li>
 
-          
-        </ul>: <ul  className="menu menu-horizontal px-2 ">
-        <li><Link to='/login' >Login</Link></li>
-        </ul> 
-        }
-      </div>  
+            <li onClick={handleLogOut}>
+              <Link>LogOut</Link>
+            </li>
+          </ul>
+        ) : (
+          <ul className="menu menu-horizontal px-2 ">
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        )}
+      </div>
     </div>
   );
 };

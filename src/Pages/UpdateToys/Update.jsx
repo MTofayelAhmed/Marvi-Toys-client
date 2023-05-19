@@ -15,7 +15,7 @@ const handleUpdate= (event)=>{
   const quantity = form.quantity.value;
   const description = form.description.value;
   const updatedInfo = {price, quantity, description}
-  fetch(`http://localhost:5000/toys/${_id}`,{
+  fetch(`https://assignment-11-server-two-puce.vercel.app:5000/toys/${_id}`,{
     method: "PUT",
     headers: {
       'content-type': 'application/json'
