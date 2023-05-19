@@ -84,7 +84,7 @@ const Navbar = () => {
       { user? <ul className="menu menu-horizontal px-2 ">
          
             <li>
-            <Link to="/myToy">My Toys</Link>
+            <Link to="/myToys">My Toys</Link>
           </li>
 
           <li tabIndex={0}>
