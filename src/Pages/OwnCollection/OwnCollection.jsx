@@ -1,38 +1,40 @@
+import { Link } from "react-router-dom";
 
 
-const OwnCollection = ({personalCollection}) => {
-const { photo, name, sellerName, sellerEmail, price, rating, quantity, description,}= personalCollection
 
+
+const OwnCollection = ({ personalCollection, handleDelete }) => {
+  const {
+    photo,
+    name,
+    _id,
+    sellerName,
+
+    price,
+    rating,
+    quantity,
+   
+  } = personalCollection;
 
   return (
     <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
-        <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Hart Hagerty</div>
-              <div className="text-sm opacity-50">United States</div>
+      <td>
+        <div >
+          <div className="avatar">
+            <div className="w-24 rounded-xl">
+              <img src={photo} />
             </div>
           </div>
-        </td>
-        <td>
-         
-        </td>
-        <td>Purple</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
-     
+        </div>
+      </td>
+      <td>{name}</td>
+      <td>{  sellerName}</td>
+      <td>{price}</td>
+      <td>{rating}</td>
+     <td>{quantity}</td>
+     <td><button onClick={()=>handleDelete(_id)} className="btn btn-outline btn-warning">Delete</button> </td>
+     <td><Link to={`/update/${_id}`}><button className="btn btn-outline btn-warning">Update</button></Link></td>
+    </tr>
   );
 };
 
