@@ -20,7 +20,7 @@ console.log("user", user)
       });
   };
   return (
-    <div className="navbar font-bold mb-16 bg-gray-800 text-white ">
+    <div className="navbar font-bold  bg-gray-800 text-white ">
       <div className="navbar-start">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,7 +41,7 @@ console.log("user", user)
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow  text-white bg-red-800 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-800  rounded-box w-52"
           >
             <li>
               <Link to="/">Home</Link>
@@ -57,7 +57,7 @@ console.log("user", user)
 
         <img className="w-15 rounded-full" src={logo} alt="" />
 
-        <button className=" text-5xl font-bold font-mono ml-20  ">
+        <button className=" text-5xl font-bold font-mono ml-5  ">
           MARVITOYS
         </button>
       </div>
