@@ -5,10 +5,10 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const { signIn,  googleLogin} = useContext(AuthContext)
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const location = useLocation()
   console.log(location)
-// const from = location.state.from.pathname || "/"
+const from = location.state?.from?.pathname || "/"
   const handleLogin = (event)=>{
     event.preventDefault()
     const form = event.target;
@@ -21,6 +21,7 @@ const Login = () => {
     .then(result =>{
       const signInUser= result.user;
       console.log("loginUser", signInUser)
+      navigate(from, { replace: true })
     })
     .catch(error=>{
       console.log(error.message)
