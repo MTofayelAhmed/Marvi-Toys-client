@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 
 const Register = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate()
   const { createUser, googleLogin, updateUserData } = useContext(AuthContext);
+useTitle('Register')
 
   const handleRegister = (event) => {
     event.preventDefault();

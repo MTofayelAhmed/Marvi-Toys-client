@@ -2,10 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import OwnCollection from "../OwnCollection/OwnCollection";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const Mytoys = () => {
   const [toys, setToys] = useState([]);
   const { user } = useContext(AuthContext);
+
+  useTitle('MyToys')
   console.log(user.email);
   const url = `https://assignment-11-server-two-puce.vercel.app/toys?email=${user.email} `;
   useEffect(() => {

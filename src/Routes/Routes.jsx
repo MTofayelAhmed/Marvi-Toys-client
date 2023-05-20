@@ -13,6 +13,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Mytoys from "../Pages/MyToys/Mytoys";
 import Update from "../Pages/UpdateToys/Update";
 import Error from "../Pages/ErrorPage/Error";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       loader: ({params})=> fetch(`https://assignment-11-server-two-puce.vercel.app/toys/${params.id}`)
 
       },
+      {
+        path:'blog',
+        element: <Blog></Blog>
+      }
       
        
       

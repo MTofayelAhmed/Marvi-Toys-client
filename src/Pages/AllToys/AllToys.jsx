@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import AllToysTable from "../AllToysTable/AllToysTable";
+import useTitle from "../../Hooks/useTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [text, setText] =useState('')
+  useTitle("All Toys")
 
   useEffect(() => {
     fetch("https://assignment-11-server-two-puce.vercel.app/toys")
