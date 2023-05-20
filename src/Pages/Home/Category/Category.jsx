@@ -10,7 +10,7 @@ const [activeTab, setActiveTab]= useState("Marvel")
 
 
 useEffect(()=>{
-  fetch(`http://localhost:5000/toy/${activeTab}`)
+  fetch(` https://assignment-11-server-two-puce.vercel.app/toy/${activeTab}`)
   .then(res=> res.json())
   .then(data =>{
     console.log("subcategory data", data)

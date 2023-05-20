@@ -9,13 +9,14 @@ const {_id,price, quantity, description}= toyInfo
 
 
 const handleUpdate= (event)=>{
+ 
   event.preventDefault()
   const form = event.target;
   const price = form.price.value;
   const quantity = form.quantity.value;
   const description = form.description.value;
   const updatedInfo = {price, quantity, description}
-  fetch(`https://assignment-11-server-two-puce.vercel.app:5000/toys/${_id}`,{
+  fetch(`https://assignment-11-server-two-puce.vercel.app/toys/${_id}`,{
     method: "PUT",
     headers: {
       'content-type': 'application/json'
