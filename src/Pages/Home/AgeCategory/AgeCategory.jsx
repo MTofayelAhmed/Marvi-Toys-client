@@ -6,7 +6,7 @@ const AgeCategory = () => {
          Ways To Shop
         </h1>
       </div>
-      <div className=" mx-20 grid grid-cols grid-cols-4 gap-5 avatar my-10">
+      <div className=" mx-20 grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-5 avatar my-10">
         <div className="w-44 rounded-full hover:bg-gray-700 bg-sky-800">
           <h1 className="text-center pt-20 font-sans font-bold text-white ">
             Age: 2-4 Years

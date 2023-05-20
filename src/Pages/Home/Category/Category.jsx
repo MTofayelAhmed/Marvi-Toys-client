@@ -1,37 +1,49 @@
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList, } from "react-tabs";
+import "./Category.css";
+import { useState } from "react";
+import CardCategory from "../CardCategory/CardCategory";
 
 const Category = () => {
+const [category, setCategory]= useState([])
+const [activeTab, setActiveTab]= useState("Marvel")
+
+
+const handleCategory= (subcategory)=>{
+  setActiveTab(subcategory)
+  fetch(`http://localhost:5000/toy/${activeTab}`)
+  .then(res=> res.json())
+  .then(data =>{
+    console.log("subcategory data", data)
+    setCategory(data)
+  })
+}
+
+
+
+
+
+ 
+
   return (
-    <div>
-      <Tabs>
-        <TabList className="border rounded flex justify-between  items-center w-full h-10 px-10 font-bold">
-          <Tab>
-            <button
-              type="button"
-              className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-              data-te-toggle="modal"
-              data-te-target="#exampleModalLg"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
-              Large modal
-            </button>
+  
+      <Tabs className="tabs">
+        <TabList>
+          <Tab onClick={() => handleCategory("Marvel")} className="tab" >
+            Marvel
           </Tab>
-          <Tab>Avengers</Tab>
-          <Tab>DC Comics</Tab>
+          <Tab onClick={() => handleCategory("StarWar")} className="tab">StarWar</Tab>
+          <Tab onClick={() => handleCategory("DC comics")} className="tab">DC Comics</Tab>
         </TabList>
 
-        <TabPanel>
-          <div></div>
-        </TabPanel>
-        <TabPanel>
-          <div></div>
-        </TabPanel>
-        <TabPanel>
-          <div></div>
-        </TabPanel>
+        <div>
+          <div className="grid grid-cols md:grid-cols-2 gap-10 ">
+            {category.slice(0, 2).map(cat=> <CardCategory key={cat._id} cat={cat}></CardCategory>)}
+          </div>
+        </div>
+
+   
       </Tabs>
-    </div>
+  
   );
 };
 

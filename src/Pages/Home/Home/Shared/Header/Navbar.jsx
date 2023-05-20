@@ -20,7 +20,7 @@ console.log("user", user)
       });
   };
   return (
-    <div className="navbar font-bold  bg-gray-800 text-white ">
+    <div className="navbar font-bold hover:bg-gray-700  bg-gray-800 text-white ">
       <div className="navbar-start">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

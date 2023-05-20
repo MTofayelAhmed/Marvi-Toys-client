@@ -15,7 +15,7 @@ const FeaturedToys = () => {
             <p className="text-center mt-5 text-xl text-white">Iron Man</p>
           </div>
         </div>
-        <div className="w-64 rounded bg-red-900 px-3 pt-3 hover:bg-blue-900 ">
+        <div className="w-64 rounded bg-green-900 px-3 pt-3 hover:bg-blue-900 ">
           <div>
             <img src="https://i.ibb.co/cvZWcfC/hulk-2.jpg" alt="Shoes" />
           </div>
