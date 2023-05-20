@@ -22,6 +22,7 @@ const CardCategory = ({ cat }) => {
        
           <Link to={`/details/${_id}`}>view Details</Link>
         </button>
+        
       </div>
     </div>
   );

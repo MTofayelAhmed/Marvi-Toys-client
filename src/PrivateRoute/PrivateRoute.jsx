@@ -6,6 +6,13 @@ import Swal from "sweetalert2";
 
 const PrivateRoute = ({children}) => {
   const {user, loading}= useContext(AuthContext)
+  const location = useLocation()
+  
+  if(loading){
+    return <progress className="progress w-56" value="70" max="100"></progress>
+    }
+
+
 
 
 if(!user){
@@ -20,13 +27,11 @@ if(!user){
   })
 }
 
-  const location = useLocation()
+  
 
-if(loading){
-return <progress className="progress w-56" value="70" max="100"></progress>
-}
 
-  if(user){
+
+  if(user) {
     return children; 
   }
   return (

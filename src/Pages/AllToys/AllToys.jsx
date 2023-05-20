@@ -1,40 +1,61 @@
 import { useEffect, useState } from "react";
 import AllToysTable from "../AllToysTable/AllToysTable";
 
-
 const AllToys = () => {
-  const[toys, setToys]= useState([])
+  const [toys, setToys] = useState([]);
+  const [text, setText] =useState('')
 
-useEffect(()=>{
-fetch('https://assignment-11-server-two-puce.vercel.app/toys')
-.then(res=>res.json())
-.then(data =>{
-  setToys(data)
-})
-},[] )
+  useEffect(() => {
+    fetch("https://assignment-11-server-two-puce.vercel.app/toys")
+      .then((res) => res.json())
+      .then((data) => {
+        setToys(data);
+      });
+  }, []);
+
+
+
+  const handleSearch= ()=>{
+    fetch(`http://localhost:5000/search/${text}`)
+    .then(res =>res.json())
+    .then(data =>{
+      console.log(data)
+      setToys(data)
+    })
+  }
 
 
   return (
-    <div>
+    <div className="my-20">
+      <div className="ml-80 my-10">
+        <input
+          onChange={(event) => setText(event.target.value)}
+          type="text"
+          placeholder="Type here"
+          className="input input-bordered input-error w-full max-w-xs"
+        />
+       <button onClick={handleSearch} className="btn btn-primary ml-10">Search </button>
+      </div>
       <div className="overflow-x-auto">
-  <table className="table table-zebra w-full">
-    {/* head */}
-    <thead>
-      <tr>
-        <th>SellerName</th>
-        <th>ToysName</th>
-        <th>SubCategory</th>
-        <th>price</th>
-        <th>Quantity</th>
-        <th>view Details</th>
-      </tr>
-    </thead>
-    <tbody>
-   
-    {toys.map(toy=> <AllToysTable key={toy._id} toy={toy}></AllToysTable>)}
-    </tbody>
-  </table>
-</div>
+        <table className="table table-zebra w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>SellerName</th>
+              <th>ToysName</th>
+              <th>SubCategory</th>
+              <th>price</th>
+              <th>Quantity</th>
+              <th>view Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {toys.slice(0, 20).map((toy) => (
+              <AllToysTable key={toy._id} toy={toy}></AllToysTable>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
