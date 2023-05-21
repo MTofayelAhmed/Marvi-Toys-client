@@ -18,7 +18,7 @@ const AllToys = () => {
 
 
   const handleSearch= ()=>{
-    fetch(`http://localhost:5000/search/${text}`)
+    fetch(`https://assignment-11-server-two-puce.vercel.app/search/${text}`)
     .then(res =>res.json())
     .then(data =>{
       console.log(data)

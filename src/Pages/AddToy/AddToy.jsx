@@ -35,7 +35,7 @@ fetch('https://assignment-11-server-two-puce.vercel.app/toys',{
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: 'Your work has been saved',
+      title: 'YourToy has been saved',
       showConfirmButton: false,
       timer: 1500
     })
