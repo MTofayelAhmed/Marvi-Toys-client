@@ -9,7 +9,10 @@ const FeaturedToys = () => {
       <div className="grid grid-cols md:grid-cols-4  gap-3  mx-10 ">
         <div className="w-64 rounded bg-red-900 hover:bg-gray-700 px-3 pt-3  ">
           <div>
-            <img src="https://i.ibb.co/VBBG1Yt/iron-man-5265222-960-720.jpg" alt="Shoes" />
+            <img
+              src="https://i.ibb.co/VBBG1Yt/iron-man-5265222-960-720.jpg"
+              alt="Shoes"
+            />
           </div>
           <div>
             <p className="text-center mt-5 text-xl text-white">Iron Man</p>

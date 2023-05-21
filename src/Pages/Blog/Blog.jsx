@@ -14,8 +14,8 @@ const Blog = () => {
         when you prove who you are and get permission. it is issued by an
         authentication server or authorization server after a user successfully
         authenticates and grants permission to access specific resources. It is
-        a string of characters that represents the user authorization to
-        access certain protected resources or perform specific actions.
+        a string of characters that represents the user authorization to access
+        certain protected resources or perform specific actions.
         <br />A refresh token is a special key that helps you get a new access
         token when the old one expires. It is like having a spare key that you
         keep in a safe place. When your access token is about to expire, you can
@@ -78,6 +78,19 @@ const Blog = () => {
       <h1 className=" py-4 text-base text-gray-800 font-bold ">
         Question:What is MongoDB aggregate and how does it work?
       </h1>
+      <p className=" py-4 text-base text-gray-800  ">
+        Answer: MongoDB aggregate is a data processing pipeline that allows
+        you to perform advanced analysis and manipulation operations on MongoDB
+        collections. It consists of stages like $match for filtering,
+        $project for reshaping data, $group for aggregating data, $sort
+        for sorting, $limit and $skip for pagination, $unwind for working
+        with arrays, and $lookup for joining collections. These stages are
+        executed sequentially, transforming data along the way. Aggregations
+        enable complex calculations, data transformations, and analysis directly
+        within the database, improving performance and reducing data transfer.
+        They are particularly useful for generating reports, statistics, and
+        performing data analysis tasks in MongoDB.
+      </p>
     </div>
   );
 };
