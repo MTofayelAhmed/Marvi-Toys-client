@@ -8,7 +8,7 @@ const AllToys = () => {
   useTitle("All Toys")
 
   useEffect(() => {
-    fetch("https://assignment-11-server-two-puce.vercel.app/toys")
+    fetch("https://assignment-11-server-two-puce.vercel.app/tab")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -18,7 +18,9 @@ const AllToys = () => {
 
 
   const handleSearch= ()=>{
-    fetch(`https://assignment-11-server-two-puce.vercel.app/search/${text}`)
+    fetch(`https://assignment-11-server-two-puce.vercel.app/search/${text}`,{
+      
+    })
     .then(res =>res.json())
     .then(data =>{
       console.log(data)
@@ -28,7 +30,7 @@ const AllToys = () => {
 
 
   return (
-    <div className="my-20">
+    <div className="my-20 mx-10">
       <div className="ml-80 my-10">
         <input
           onChange={(event) => setText(event.target.value)}

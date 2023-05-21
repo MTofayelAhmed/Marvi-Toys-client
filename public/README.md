@@ -4,4 +4,4 @@
 * firebase authentication is also done in this project.
 * seller has access to update and delete data as he or she want.
 
-website: https://assignment11client.web.app
+website:https://assignment11client.web.app
