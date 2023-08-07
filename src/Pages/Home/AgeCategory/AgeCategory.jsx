@@ -1,6 +1,6 @@
 const AgeCategory = () => {
   return (
-    <div className=" my-10">
+    <div className=" my-10 mt-20">
       <div  className="w-2/5 mx-auto mb-10 " data-aos="fade-right" >
         <h1 className="  text-center text-4xl py-2 rounded-md hover:bg-gray-700 bg-gray-900 text-white font-serif font-bold">
          Ways To Shop

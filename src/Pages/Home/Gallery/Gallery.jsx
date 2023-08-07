@@ -1,6 +1,6 @@
 const Gallery = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 my-10">
       <div className="w-2/5 mx-auto mb-10">
         <h1 className="  text-center text-4xl py-2 rounded-md hover:bg-gray-700 bg-gray-900 text-white font-serif font-bold">
           Your Hero Gallery
